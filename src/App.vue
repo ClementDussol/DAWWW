@@ -22,7 +22,6 @@ export default {
 		return { 
 			synth, 
 			delay,
-
 			initiatedConnection : null,
 			connections : [],
 		}
@@ -50,6 +49,7 @@ export default {
 				{
 					console.log("disconnect " + i);
 					this.connections.splice(i, 1);
+					connection[0].node.disconnect(connection[1].node);
 				}
 			}
 		}
@@ -66,6 +66,10 @@ export default {
 		font-family: monospace;
 	}
 	#app {
-		background-color: gray;
+		background-color:darkslategrey;
+		background-image: url('./assets/background.png');
+		background-repeat: repeat;
+		width: 100vw;
+		height: 100vh;
 	}
 </style>

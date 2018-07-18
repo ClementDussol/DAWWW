@@ -1,9 +1,13 @@
 <template>
     <container name="Synth" class="synth" :draggable="true" :content="synth" :main="true">
+
+        <div class="button-container">
+            <button @click="toggle">{{ isPlaying ? "Pause" : "Play" }}</button>
+            <button @click="trigger">Note</button>
+        </div>
+
         <oscillator :oscillator="synth.oscillator"/>
         <envelope :envelope="synth.envelope" />
-        <button @click="toggle">{{ isPlaying ? "Pause" : "Play" }}</button>
-        <button @click="trigger">Note</button>
     </container>
 </template>
 
@@ -32,6 +36,13 @@
     }
 </script>
 
-<style>
-
+<style scoped>
+    .button-container {
+        display: flex;
+    } 
+    button {
+        display: block;
+        padding: 8px;
+        flex: 1;
+    }
 </style>

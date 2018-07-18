@@ -1,7 +1,7 @@
 <template>
-    <container class="envelope" name="Envelope">
+    <container class="envelope" name="Envelope" :color="'grey'">
 
-        <svg height="96" width="256" v-if="envelope">
+        <svg height="112" width="288" v-if="envelope">
             
             <polygon :points="points" fill="rgba(0, 0, 255, 0.5)"/>
             
@@ -120,6 +120,7 @@
     }
     .name{
         text-align: center;
+        font-size: 16px;
     }
 </style>
 

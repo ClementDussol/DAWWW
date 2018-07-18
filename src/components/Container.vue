@@ -38,10 +38,14 @@ export default {
     }),
     computed : {
         style(){
-            return {
-                top : this.position.y + "px",
-                left : this.position.x + "px"
+            let style = {
+                top  : this.position.y + "px",
+                left : this.position.x + "px",
             }
+            if(!this.main)
+                style.width = "100%" 
+            
+            return style;
         }
     },
     methods : {

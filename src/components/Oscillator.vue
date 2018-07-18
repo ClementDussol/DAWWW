@@ -1,5 +1,5 @@
 <template>
-    <container name="Oscillator" class="oscillator">
+    <container name="Oscillator" class="oscillator" :color="'grey'">
         <div class="types">
             <div :class="['wave-type', 'sine', oscillator.type == 'sine' ? 'selected' : '' ]" @click="setType('sine')">
                 <img src="./../assets/icons/wave-sine.png" />
@@ -25,8 +25,6 @@
         methods : {
             setType(type){
                 this.oscillator.type = type;
-                console.log(this.oscillator);
-                console.log(this.oscillator.type);
             }
         }
     }
